@@ -32,13 +32,20 @@
   .cursor {
     cursor: default;
   }
+
+  span {
+    pointer-events: none;
+    z-index: 1;
+  }
 </style>
 
 <main on:dragover={passDragData} class:cursor={$source}>
   {#if $source}
     <span
       class="float"
-      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px);pointer-events:none;">{$source}</span>
+      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px)">
+      {$source}
+    </span>
   {/if}
   {#each $elements as element}
     <Element value={element} />

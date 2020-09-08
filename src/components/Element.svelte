@@ -35,7 +35,8 @@
     event.preventDefault();
     const source = event.dataTransfer.getData("text/plain");
     const recipe = recipes.find(
-      ({ inputs }) => JSON.stringify(inputs) === JSON.stringify([source, value])
+      ({ inputs }) =>
+        JSON.stringify(inputs.sort()) === JSON.stringify([source, value].sort())
     );
 
     if (recipe) {
