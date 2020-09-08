@@ -3,7 +3,7 @@
   import { source } from "./store/source";
   import { progress } from "./store/progress";
   import Element from "./components/Element.svelte";
-  import { getElement } from "./data/elements";
+  import { elements, getElement } from "./data/elements";
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.5 });
 
@@ -20,10 +20,17 @@
 <style>
   main {
     height: 100%;
+  }
+
+  .board {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     align-content: flex-start;
+    border: 1px solid #888;
+    border-radius: 1em;
+    padding: 1em;
+    height: 80vh;
   }
 
   .float {
@@ -31,6 +38,11 @@
     position: absolute;
     left: 0;
     top: 0;
+  }
+
+  .progress {
+    color: #ddd;
+    font-size: 4em;
   }
 
   span {
@@ -47,7 +59,10 @@
       {sourceElement.emoji}
     </span>
   {/if}
-  {#each [...$progress] as element}
-    <Element value={element} />
-  {/each}
+  <div class="board">
+    {#each [...$progress] as element}
+      <Element value={element} />
+    {/each}
+  </div>
+  <div class="progress">{[...$progress].length}/{elements.length}</div>
 </main>
