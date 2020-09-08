@@ -1,11 +1,12 @@
 <script>
   import { spring } from "svelte/motion";
+  import { scale } from "svelte/transition";
   import { source } from "./store/source";
   import { progress } from "./store/progress";
   import Element from "./components/Element.svelte";
   import { elements, getElement } from "./data/elements";
 
-  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.5 });
+  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.3 });
 
   function moveSource(event) {
     const { x, y } = event;
@@ -34,10 +35,16 @@
   }
 
   .float {
-    font-size: 2em;
     position: absolute;
     left: 0;
     top: 0;
+  }
+
+  .emoji {
+    font-size: 2em;
+    width: 48px;
+    height: 48px;
+    text-align: center;
   }
 
   .progress {
@@ -55,8 +62,11 @@
   {#if $source}
     <span
       class="float"
-      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px)">
-      {sourceElement.emoji}
+      style="transform: translate({$coords.x - 24}px,{$coords.y - 24}px)">
+      <span
+        transition:scale={{ duration: 280 }}
+        class="float emoji">{sourceElement.emoji}
+      </span>
     </span>
   {/if}
   <div class="board">
