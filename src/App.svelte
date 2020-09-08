@@ -1,12 +1,12 @@
 <script>
   import { spring } from "svelte/motion";
   import { source } from "./store/source";
-  import { elements } from "./store/elements";
+  import { progress } from "./store/progress";
   import Element from "./components/Element.svelte";
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.5 });
 
-  function passDragData(event) {
+  function moveSource(event) {
     const { x, y } = event;
     coords.set({ x, y });
   }
@@ -30,17 +30,13 @@
     top: 0;
   }
 
-  .cursor {
-    cursor: default;
-  }
-
   span {
     pointer-events: none;
     z-index: 1;
   }
 </style>
 
-<main on:dragover={passDragData} class:cursor={$source}>
+<main on:dragover={moveSource}>
   {#if $source}
     <span
       class="float"
@@ -48,7 +44,7 @@
       {$source}
     </span>
   {/if}
-  {#each $elements as element}
+  {#each $progress as element}
     <Element value={element} />
   {/each}
 </main>

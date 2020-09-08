@@ -1,10 +1,10 @@
 <script>
   import { draggable } from "../actions/draggable";
   import { source } from "../store/source";
-  import { recipes } from "../data/recipes";
-  import { elements as names } from "../data/elements";
-  import { element, onMount } from "svelte/internal";
-  import { elements } from "../store/elements";
+  import recipes from "../data/recipes.json";
+  import elements from "../data/elements.json";
+  import { onMount } from "svelte/internal";
+  import { progress } from "../store/progress";
   import { spring } from "svelte/motion";
 
   export let value;
@@ -40,7 +40,7 @@
     );
 
     if (recipe) {
-      elements.update(($elements) => insert($elements, recipe.output));
+      progress.update(($elements) => insert($elements, recipe.output));
     }
     isHovered = false;
   }
@@ -109,5 +109,5 @@
   on:drop={handleDrop}
   on:dragover={handleDragOver}>
   <div class="item" style="transform: scale({$size})">{value}</div>
-  <span>{names.find((element) => element.item === value)?.name}</span>
+  <span>{elements.find((element) => element.item === value)?.name}</span>
 </div>
