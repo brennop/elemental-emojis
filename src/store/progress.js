@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const progress = writable(new Set(["💦", "💨", "🔥", "🟫"]));
+export const progress = writable(new Set(["water", "air", "fire", "earth"]));

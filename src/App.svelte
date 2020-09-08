@@ -3,6 +3,7 @@
   import { source } from "./store/source";
   import { progress } from "./store/progress";
   import Element from "./components/Element.svelte";
+  import { getElement } from "./data/elements";
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.5 });
 
@@ -12,6 +13,8 @@
   }
 
   window.addEventListener("mousemove", moveSource);
+
+  $: sourceElement = getElement($source);
 </script>
 
 <style>
@@ -41,7 +44,7 @@
     <span
       class="float"
       style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px)">
-      {$source}
+      {sourceElement.emoji}
     </span>
   {/if}
   {#each [...$progress] as element}

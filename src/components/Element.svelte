@@ -1,7 +1,7 @@
 <script>
   import { source } from "../store/source";
-  import recipes from "../data/recipes.json";
-  import elements from "../data/elements.json";
+  import { getRecipe } from "../data/recipes.js";
+  import { getElement } from "../data/elements.js";
   import { onMount } from "svelte/internal";
   import { progress } from "../store/progress";
   import { spring } from "svelte/motion";
@@ -10,6 +10,7 @@
 
   export let value;
   let isHovered = false;
+  const { emoji, displayName } = getElement(value);
   const size = spring(0, { stiffness: 0.2, damping: 0.5 });
 
   onMount(() => {
@@ -19,10 +20,7 @@
   function handleDrop(event) {
     event.preventDefault();
 
-    const recipe = recipes.find(
-      ({ inputs }) =>
-        inputs.sort().toString() === [$source, value].sort().toString()
-    );
+    const recipe = getRecipe([$source, value]);
 
     if (recipe) {
       progress.update(($elements) => $elements.add(recipe.output));
@@ -75,6 +73,6 @@
   use:draggable={value}
   use:hoverable={(value) => (isHovered = value)}
   on:drop={handleDrop}>
-  <div class="item" style="transform: scale({$size})">{value}</div>
-  <span>{elements.find((element) => element.item === value)?.name}</span>
+  <div class="item" style="transform: scale({$size})">{emoji}</div>
+  <span>{displayName}</span>
 </div>
