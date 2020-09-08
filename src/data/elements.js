@@ -11,6 +11,7 @@ export const elements = [
   { emoji: "🚬", value: "smoke", displayName: "Smoke" },
   { emoji: "☁", value: "cloud", displayName: "Cloud" },
   { emoji: "🌧", value: "rain", displayName: "Rain" },
+  { emoji: "⛈", value: "thunders", displayName: "Thunderstorm" },
   { emoji: "🔋", value: "energy", displayName: "Energy" },
   { emoji: "🌬", value: "wind", displayName: "Wind" },
   { emoji: "♨", value: "steam", displayName: "Steam" },
@@ -42,6 +43,7 @@ export const elements = [
   { emoji: "🌑", value: "moon", displayName: "Moon" },
   { emoji: "☄", value: "comet", displayName: "Comet" },
   { emoji: "🌠", value: "comet2", displayName: "Shooting Star" },
+  { emoji: "⛓", value: "metal", displayName: "Metal" },
 ];
 
 export const getElement = (value) => {

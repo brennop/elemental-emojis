@@ -17,6 +17,7 @@ export const recipes = [
   { inputs: ["planet", "energy"], output: "sun" },
   { inputs: ["wind", "sea"], output: "wave" },
   { inputs: ["volt", "cloud"], output: "lightning" },
+  { inputs: ["volt", "rain"], output: "lightning" },
   { inputs: ["rain", "land"], output: "seedling" },
   { inputs: ["rain", "earth"], output: "seedling" },
   { inputs: ["seedling", "sun"], output: "plant" },
@@ -39,6 +40,8 @@ export const recipes = [
   { inputs: ["moon", "star"], output: "night" },
   { inputs: ["rock", "galaxy"], output: "comet" },
   { inputs: ["comet", "star"], output: "comet2" },
+  { inputs: ["fire", "rock"], output: "metal" },
+  { inputs: ["metal", "energy"], output: "volt" },
 ];
 
 export const getRecipe = (inputs) => {
