@@ -7,8 +7,6 @@
   let coords = spring({ x: 0, y: 0 });
 
   function passDragData(event) {
-    event.preventDefault();
-
     const { x, y } = event;
     coords.set({ x, y });
   }
@@ -39,7 +37,7 @@
   {#if $source}
     <span
       class="float"
-      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px)">{$source}</span>
+      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px);pointer-events:none;">{$source}</span>
   {/if}
   {#each $elements as element}
     <Element value={element} />
