@@ -3,11 +3,17 @@
   import { source } from "../store/source";
   import { recipes } from "../data/recipes";
   import { elements as names } from "../data/elements";
-  import { element } from "svelte/internal";
+  import { element, onMount } from "svelte/internal";
   import { elements } from "../store/elements";
+  import { spring } from "svelte/motion";
 
   export let value;
   let isHovered = false;
+  const size = spring(0, { stiffness: 0.2, damping: 0.5 });
+
+  onMount(() => {
+    size.set(1);
+  });
 
   const insert = (array, item) => {
     const newArray = [...array, item];
@@ -101,6 +107,6 @@
   on:dragend={handleDragEnd}
   on:drop={handleDrop}
   on:dragover={handleDragOver}>
-  <div class="item">{value}</div>
+  <div class="item" style="transform: scale({$size})">{value}</div>
   <span>{names.find((element) => element.item === value)?.name}</span>
 </div>
