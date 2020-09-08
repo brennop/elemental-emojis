@@ -1,8 +1,19 @@
 <script>
-  import { writable } from "svelte/store";
+  import { spring } from "svelte/motion";
+  import { source } from "./store/source";
+  import { elements } from "./store/elements";
   import Element from "./components/Element.svelte";
 
-  export const elements = writable(["🔥", "💧", "💨"]);
+  let coords = spring({ x: 0, y: 0 });
+
+  function passDragData(event) {
+    event.preventDefault();
+
+    const { x, y } = event;
+    coords.set({ x, y });
+  }
+
+  window.addEventListener("mousemove", ({ x, y }) => coords.set({ x, y }));
 </script>
 
 <style>
@@ -11,9 +22,25 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  .float {
+    font-size: 2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .cursor {
+    cursor: default;
+  }
 </style>
 
-<main>
+<main on:dragover={passDragData} class:cursor={$source}>
+  {#if $source}
+    <span
+      class="float"
+      style="transform: translate({$coords.x - 16}px,{$coords.y - 16}px)">{$source}</span>
+  {/if}
   {#each $elements as element}
     <Element value={element} />
   {/each}

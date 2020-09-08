@@ -1,24 +1,25 @@
 <script>
-  import { spring } from "svelte/motion";
   import { draggable } from "../actions/draggable";
+  import { source } from "../store/source";
   export let value;
 
-  let coords = spring({ x: 0, y: 0 });
+  function handleDragStart(event) {
+    source.set(value);
 
-  function handleDragStart(event) {}
-
-  function handleDragMove(event) {
-    const { x, y, dx, dy } = event.detail;
-
-    coords.update(($coords) => ({ x: $coords.x + dx, y: $coords.y + dy }));
+    const img = new Image();
+    img.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
+    event.dataTransfer.setDragImage(img, 0, 0);
   }
 
+  function handleDragMove(event) {}
+
   function handleDrop(event) {
-    console.log(event);
+    console.log(value);
   }
 
   function handleDragEnd(event) {
-    coords.set({ x: 0, y: 0 });
+    source.set();
   }
 </script>
 
@@ -38,10 +39,9 @@
 </style>
 
 <div
-  use:draggable
+  draggable={true}
   on:drag={handleDragMove}
   on:dragstart={handleDragStart}
-  on:dragend={handleDragEnd}
-  style="transform: translate({$coords.x}px,{$coords.y}px)">
+  on:dragend={handleDragEnd}>
   {value}
 </div>
