@@ -2,6 +2,7 @@
   import { draggable } from "../actions/draggable";
   import { source } from "../store/source";
   import { recipes } from "../data/recipes";
+  import { elements as names } from "../data/elements";
   import { element } from "svelte/internal";
   import { elements } from "../store/elements";
   export let value;
@@ -27,9 +28,9 @@
   function handleDrop(event) {
     event.preventDefault();
     const source = event.dataTransfer.getData("text/plain");
-    const recipe = recipes
-      .filter((recipe) => recipe.inputs.includes(source))
-      .find((recipe) => recipe.inputs.includes(value));
+    const recipe = recipes.find(
+      ({ inputs }) => JSON.stringify(inputs) === JSON.stringify([source, value])
+    );
 
     if (recipe) {
       elements.update(($elements) => insert($elements, recipe.output));
@@ -46,7 +47,7 @@
 </script>
 
 <style>
-  div {
+  .item {
     font-size: 2em;
     cursor: default;
     -webkit-touch-callout: none;
@@ -60,12 +61,16 @@
   }
 </style>
 
-<div
-  draggable={true}
-  on:drag={handleDragMove}
-  on:dragstart={handleDragStart}
-  on:dragend={handleDragEnd}
-  on:drop={handleDrop}
-  on:dragover={handleDragOver}>
-  {value}
+<div>
+  <div
+    class="item"
+    draggable={true}
+    on:drag={handleDragMove}
+    on:dragstart={handleDragStart}
+    on:dragend={handleDragEnd}
+    on:drop={handleDrop}
+    on:dragover={handleDragOver}>
+    {value}
+  </div>
+  <span>{names.find((element) => element.item === value)?.name}</span>
 </div>
