@@ -20,6 +20,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+    align-content: flex-start;
   }
 
   .float {
