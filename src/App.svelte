@@ -4,7 +4,7 @@
   import { elements } from "./store/elements";
   import Element from "./components/Element.svelte";
 
-  let coords = spring({ x: 0, y: 0 });
+  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.5 });
 
   function passDragData(event) {
     const { x, y } = event;
@@ -19,6 +19,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
   }
 
   .float {

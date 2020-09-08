@@ -5,10 +5,12 @@
   import { elements as names } from "../data/elements";
   import { element } from "svelte/internal";
   import { elements } from "../store/elements";
+
   export let value;
+  let isHovered = false;
 
   const insert = (array, item) => {
-    const newArray = [...array, item].sort();
+    const newArray = [...array, item];
     return Array.from(new Set(newArray));
   };
 
@@ -23,8 +25,6 @@
     event.dataTransfer.setDragImage(img, 0, 0);
   }
 
-  function handleDragMove(event) {}
-
   function handleDrop(event) {
     event.preventDefault();
     const source = event.dataTransfer.getData("text/plain");
@@ -35,42 +35,72 @@
     if (recipe) {
       elements.update(($elements) => insert($elements, recipe.output));
     }
+    isHovered = false;
   }
 
   function handleDragEnd(event) {
     source.set();
+    isHovered = false;
   }
 
   function handleDragOver(event) {
     event.preventDefault();
+    isHovered = true;
+  }
+
+  function handleDragExit(event) {
+    isHovered = false;
   }
 </script>
 
 <style>
   .item {
     font-size: 2em;
-    cursor: default;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    text-align: center;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    padding: 0.5em;
+  }
+
+  .container {
+    border-radius: 0.8em;
+    padding: 1em;
     height: min-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.1s ease-out;
+  }
+
+  .container:hover {
+    background-color: #f0f0f0;
+  }
+
+  .hover {
+    background-color: #e2e8f0;
+  }
+
+  span {
+    font-size: 0.8rem;
   }
 </style>
 
-<div>
-  <div
-    class="item"
-    draggable={true}
-    on:drag={handleDragMove}
-    on:dragstart={handleDragStart}
-    on:dragend={handleDragEnd}
-    on:drop={handleDrop}
-    on:dragover={handleDragOver}>
-    {value}
-  </div>
+<div
+  class="container"
+  class:hover={isHovered}
+  draggable={true}
+  on:dragexit={handleDragExit}
+  on:dragstart={handleDragStart}
+  on:dragend={handleDragEnd}
+  on:drop={handleDrop}
+  on:dragover={handleDragOver}>
+  <div class="item">{value}</div>
   <span>{names.find((element) => element.item === value)?.name}</span>
 </div>
