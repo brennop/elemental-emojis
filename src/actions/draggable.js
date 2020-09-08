@@ -1,53 +1,28 @@
-export function draggable(node) {
-  let x;
-  let y;
+import { source } from "../store/source";
 
-  node.addEventListener("mousedown", handleMouseDown);
+export function draggable(node, value) {
+  node.draggable = true;
 
-  function handleMouseDown(event) {
-    x = event.clientX;
-    y = event.clientY;
+  node.addEventListener("dragstart", handleDragStart);
+  node.addEventListener("dragend", handleDragEnd);
 
-    node.dispatchEvent(
-      new CustomEvent("dragstart", {
-        detail: { x, y },
-      })
-    );
+  function handleDragStart(event) {
+    source.set(value);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+    const img = new Image();
+    img.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
+    event.dataTransfer.setDragImage(img, 0, 0);
   }
 
-  function handleMouseMove(event) {
-    const dx = event.clientX - x;
-    const dy = event.clientY - y;
-    x = event.clientX;
-    y = event.clientY;
-
-    node.dispatchEvent(
-      new CustomEvent("drag", {
-        detail: { x, y, dx, dy },
-      })
-    );
-  }
-
-  function handleMouseUp(event) {
-    x = event.clientX;
-    y = event.clientY;
-
-    node.dispatchEvent(
-      new CustomEvent("dragend", {
-        detail: { x, y },
-      })
-    );
-
-    window.removeEventListener("mousemove", handleMouseMove);
-    window.removeEventListener("mouseup", handleMouseUp);
+  function handleDragEnd() {
+    source.set();
   }
 
   return {
     destroy() {
-      node.removeEventListener("mousedown", handleMouseDown);
+      node.removeEventListener("dragstart", handleDragStart);
+      node.removeEventListener("dragend", handleDragEnd);
     },
   };
 }

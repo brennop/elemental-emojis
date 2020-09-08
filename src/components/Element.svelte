@@ -1,11 +1,12 @@
 <script>
-  import { draggable } from "../actions/draggable";
   import { source } from "../store/source";
   import recipes from "../data/recipes.json";
   import elements from "../data/elements.json";
   import { onMount } from "svelte/internal";
   import { progress } from "../store/progress";
   import { spring } from "svelte/motion";
+  import { draggable } from "../actions/draggable";
+  import { hoverable } from "../actions/hoverable";
 
   export let value;
   let isHovered = false;
@@ -15,48 +16,17 @@
     size.set(1);
   });
 
-  const insert = (array, item) => {
-    const newArray = [...array, item];
-    return Array.from(new Set(newArray));
-  };
-
-  function handleDragStart(event) {
-    source.set(value);
-
-    event.dataTransfer.setData("text/plain", value);
-
-    const img = new Image();
-    img.src =
-      "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
-    event.dataTransfer.setDragImage(img, 0, 0);
-  }
-
   function handleDrop(event) {
     event.preventDefault();
-    const source = event.dataTransfer.getData("text/plain");
+
     const recipe = recipes.find(
       ({ inputs }) =>
-        JSON.stringify(inputs.sort()) === JSON.stringify([source, value].sort())
+        inputs.sort().toString() === [$source, value].sort().toString()
     );
 
     if (recipe) {
-      progress.update(($elements) => insert($elements, recipe.output));
+      progress.update(($elements) => $elements.add(recipe.output));
     }
-    isHovered = false;
-  }
-
-  function handleDragEnd(event) {
-    source.set();
-    isHovered = false;
-  }
-
-  function handleDragOver(event) {
-    event.preventDefault();
-    isHovered = true;
-  }
-
-  function handleDragExit(event) {
-    isHovered = false;
   }
 </script>
 
@@ -102,12 +72,9 @@
 <div
   class="container"
   class:hover={isHovered}
-  draggable={true}
-  on:dragexit={handleDragExit}
-  on:dragstart={handleDragStart}
-  on:dragend={handleDragEnd}
-  on:drop={handleDrop}
-  on:dragover={handleDragOver}>
+  use:draggable={value}
+  use:hoverable={(value) => (isHovered = value)}
+  on:drop={handleDrop}>
   <div class="item" style="transform: scale({$size})">{value}</div>
   <span>{elements.find((element) => element.item === value)?.name}</span>
 </div>

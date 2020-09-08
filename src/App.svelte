@@ -11,7 +11,7 @@
     coords.set({ x, y });
   }
 
-  window.addEventListener("mousemove", ({ x, y }) => coords.set({ x, y }));
+  window.addEventListener("mousemove", moveSource);
 </script>
 
 <style>
@@ -44,7 +44,7 @@
       {$source}
     </span>
   {/if}
-  {#each $progress as element}
+  {#each [...$progress] as element}
     <Element value={element} />
   {/each}
 </main>
