@@ -11,7 +11,8 @@
   export let value;
   let isHovered = false;
   const { emoji, displayName } = getElement(value);
-  const size = spring(0, { stiffness: 0.2, damping: 0.5 });
+
+  const size = spring(0.2, { stiffness: 0.2, damping: 0.5 });
 
   onMount(() => {
     size.set(1);
@@ -34,6 +35,8 @@
     width: 3rem;
     height: 3rem;
     cursor: pointer;
+    text-align: center;
+    width: min-content;
     text-align: center;
 
     -webkit-touch-callout: none;

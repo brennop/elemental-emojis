@@ -8,6 +8,7 @@ export const elements = [
   { emoji: "🗾", value: "land", displayName: "Land" },
   { emoji: "🚿", value: "shower", displayName: "Shower" },
   { emoji: "🌋", value: "volcano", displayName: "Volcano" },
+  { emoji: "🚬", value: "smoke", displayName: "Smoke" },
   { emoji: "☁", value: "cloud", displayName: "Cloud" },
   { emoji: "🌧", value: "rain", displayName: "Rain" },
   { emoji: "🔋", value: "energy", displayName: "Energy" },
@@ -27,6 +28,20 @@ export const elements = [
   { emoji: "🌱", value: "seedling", displayName: "Seedling" },
   { emoji: "🌿", value: "plant", displayName: "Plant" },
   { emoji: "🌲", value: "tree", displayName: "Tree" },
+  { emoji: "🔮", value: "plasma", displayName: "Plasma" },
+  { emoji: "⭐", value: "star", displayName: "Star" },
+  { emoji: "🌌", value: "galaxy", displayName: "Galaxy" },
+  { emoji: "⬇", value: "pressure", displayName: "Pressure" },
+  { emoji: "🗿", value: "rock", displayName: "Rock" },
+  { emoji: "💎", value: "gem", displayName: "Diamond" },
+  { emoji: "❄", value: "cold", displayName: "Cold" },
+  { emoji: "🧊", value: "ice", displayName: "Ice" },
+  { emoji: "🌨", value: "snowing", displayName: "Snowing" },
+  { emoji: "🔊", value: "sound", displayName: "Sound" },
+  { emoji: "🎵", value: "music", displayName: "Music" },
+  { emoji: "🌑", value: "moon", displayName: "Moon" },
+  { emoji: "☄", value: "comet", displayName: "Comet" },
+  { emoji: "🌠", value: "comet2", displayName: "Shooting Star" },
 ];
 
 export const getElement = (value) => {
