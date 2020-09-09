@@ -21,6 +21,8 @@
 <style>
   main {
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .board {
@@ -31,7 +33,7 @@
     border: 1px solid #888;
     border-radius: 1em;
     padding: 1em;
-    height: 80vh;
+    flex: 1;
   }
 
   .float {
@@ -50,6 +52,7 @@
   .progress {
     color: #ddd;
     font-size: 4em;
+    padding: 0.4em 0.2em;
   }
 
   span {
@@ -69,6 +72,7 @@
       </span>
     </span>
   {/if}
+  <h1>⚛ Elemental Emojis</h1>
   <div class="board">
     {#each [...$progress] as element}
       <Element value={element} />
