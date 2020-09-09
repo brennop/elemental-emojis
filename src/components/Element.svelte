@@ -32,8 +32,6 @@
 <style>
   .item {
     font-size: 2em;
-    width: 3rem;
-    height: 3rem;
     cursor: pointer;
     text-align: center;
     width: min-content;
@@ -50,11 +48,12 @@
   .container {
     border-radius: 0.8em;
     padding: 1em;
-    height: min-content;
+    height: 6em;
     display: flex;
     align-items: center;
     flex-direction: column;
     transition: 0.1s ease-out;
+    justify-content: space-between;
   }
 
   .container:hover {

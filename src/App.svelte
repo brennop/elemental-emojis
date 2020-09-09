@@ -24,10 +24,10 @@
   }
 
   .board {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 6em);
     gap: 1em;
-    align-content: flex-start;
+    align-content: start;
     border: 1px solid #888;
     border-radius: 1em;
     padding: 1em;
