@@ -20,7 +20,7 @@
   function handleDrop(event) {
     event.preventDefault();
 
-    const output = getRecipe(craftables, $source);
+    const output = getRecipe(craftables, $source, value);
 
     if (output) {
       progress.update(($elements) => $elements.add(output.name));

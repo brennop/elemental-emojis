@@ -62,8 +62,11 @@ export const getDerived = (name) => {
   );
 };
 
-export const getRecipe = (elements, needle) => {
+export const getRecipe = (elements, source, target) => {
   return elements.find((element) =>
-    element.recipes.find((recipe) => recipe.includes(needle))
+    element.recipes.find(
+      (recipe) =>
+        recipe.sort().toString() === [source, target].sort().toString()
+    )
   );
 };
