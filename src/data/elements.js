@@ -1,51 +1,69 @@
 export const elements = [
-  { emoji: "💧", value: "water", displayName: "Water" },
-  { emoji: "🔥", value: "fire", displayName: "Fire" },
-  { emoji: "💨", value: "air", displayName: "Air" },
-  { emoji: "🟫", value: "earth", displayName: "Earth" },
-  { emoji: "💦", value: "sea", displayName: "Sea" },
-  { emoji: "🌊", value: "wave", displayName: "Wave" },
-  { emoji: "🗾", value: "land", displayName: "Land" },
-  { emoji: "🚿", value: "shower", displayName: "Shower" },
-  { emoji: "🌋", value: "volcano", displayName: "Volcano" },
-  { emoji: "🚬", value: "smoke", displayName: "Smoke" },
-  { emoji: "☁", value: "cloud", displayName: "Cloud" },
-  { emoji: "🌧", value: "rain", displayName: "Rain" },
-  { emoji: "⛈", value: "thunders", displayName: "Thunderstorm" },
-  { emoji: "🔋", value: "energy", displayName: "Energy" },
-  { emoji: "🌬", value: "wind", displayName: "Wind" },
-  { emoji: "♨", value: "steam", displayName: "Steam" },
-  { emoji: "🌍", value: "planet", displayName: "Planet" },
-  { emoji: "☀", value: "sun", displayName: "Sun" },
-  { emoji: "🏝", value: "island", displayName: "Island" },
-  { emoji: "🌃", value: "night", displayName: "Night" },
-  { emoji: "⛰", value: "mountain", displayName: "Mountain" },
-  { emoji: "🌪", value: "tornado", displayName: "Tornado" },
-  { emoji: "🌫", value: "fog", displayName: "Fog" },
-  { emoji: "🌩", value: "lightning", displayName: "Lightning" },
-  { emoji: "⚡", value: "volt", displayName: "Electricity" },
-  { emoji: "💡", value: "light", displayName: "Light" },
-  { emoji: "🌡", value: "heat", displayName: "Heat" },
-  { emoji: "🌱", value: "seedling", displayName: "Seedling" },
-  { emoji: "🌿", value: "plant", displayName: "Plant" },
-  { emoji: "🌲", value: "tree", displayName: "Tree" },
-  { emoji: "🔮", value: "plasma", displayName: "Plasma" },
-  { emoji: "⭐", value: "star", displayName: "Star" },
-  { emoji: "🌌", value: "galaxy", displayName: "Galaxy" },
-  { emoji: "⬇", value: "pressure", displayName: "Pressure" },
-  { emoji: "🗿", value: "rock", displayName: "Rock" },
-  { emoji: "💎", value: "gem", displayName: "Diamond" },
-  { emoji: "❄", value: "cold", displayName: "Cold" },
-  { emoji: "🧊", value: "ice", displayName: "Ice" },
-  { emoji: "🌨", value: "snowing", displayName: "Snowing" },
-  { emoji: "🔊", value: "sound", displayName: "Sound" },
-  { emoji: "🎵", value: "music", displayName: "Music" },
-  { emoji: "🌑", value: "moon", displayName: "Moon" },
-  { emoji: "☄", value: "comet", displayName: "Comet" },
-  { emoji: "🌠", value: "comet2", displayName: "Shooting Star" },
-  { emoji: "⛓", value: "metal", displayName: "Metal" },
+  { name: "water", emoji: "💦", displayName: "Water", recipes: [] },
+  { name: "fire", emoji: "🔥", displayName: "Fire", recipes: [] },
+  { name: "air", emoji: "💨", displayName: "Air", recipes: [] },
+  { name: "earth", emoji: "🟫", displayName: "Eart", recipes: [] },
+  {
+    name: "drop",
+    emoji: "💧",
+    displayName: "Droplet",
+    recipes: [["water", "water"]],
+  },
+  {
+    name: "heat",
+    emoji: "🌡",
+    displayName: "Heat",
+    recipes: [["fire", "fire"]],
+  },
+  { name: "fog", emoji: "🌫", displayName: "Mist", recipes: [["water", "air"]] },
+  {
+    name: "energy",
+    emoji: "🔋",
+    displayName: "Energy",
+    recipes: [["fire", "air"]],
+  },
+  {
+    name: "steam",
+    emoji: "♨",
+    displayName: "Steam",
+    recipes: [
+      ["heat", "water"],
+      ["heat", "drop"],
+    ],
+  },
+  {
+    name: "cloud",
+    emoji: "☁",
+    displayName: "Cloud",
+    recipes: [["pressure", "fog"]],
+  },
+  {
+    name: "pressure",
+    emoji: "⬇",
+    displayName: "Pressure",
+    recipes: [["air", "heat"]],
+  },
 ];
 
-export const getElement = (value) => {
-  return elements.find((element) => element.value === value);
+export const getElement = (name) => {
+  return {
+    ...elements.find((element) => element.name === name),
+    craftables: getDerived(name),
+  };
+};
+
+export const getDerived = (name) => {
+  return elements.reduce(
+    (derived, element) =>
+      element.recipes.some((recipe) => recipe.includes(name))
+        ? [...derived, element]
+        : derived,
+    []
+  );
+};
+
+export const getRecipe = (elements, needle) => {
+  return elements.find((element) =>
+    element.recipes.find((recipe) => recipe.includes(needle))
+  );
 };

@@ -1,7 +1,6 @@
 <script>
   import { source } from "../store/source";
-  import { getRecipe } from "../data/recipes.js";
-  import { getElement } from "../data/elements.js";
+  import { getElement, getRecipe } from "../data/elements.js";
   import { onMount } from "svelte/internal";
   import { progress } from "../store/progress";
   import { spring } from "svelte/motion";
@@ -10,7 +9,7 @@
 
   export let value;
   let isHovered = false;
-  const { emoji, displayName } = getElement(value);
+  const { emoji, displayName, craftables } = getElement(value);
 
   const size = spring(0.2, { stiffness: 0.2, damping: 0.5 });
 
@@ -21,10 +20,10 @@
   function handleDrop(event) {
     event.preventDefault();
 
-    const recipe = getRecipe([$source, value]);
+    const output = getRecipe(craftables, $source);
 
-    if (recipe) {
-      progress.update(($elements) => $elements.add(recipe.output));
+    if (output) {
+      progress.update(($elements) => $elements.add(output.name));
     }
   }
 </script>
