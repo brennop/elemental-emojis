@@ -1,51 +1,8 @@
-export const recipes = [
-  { inputs: ["water", "air"], output: "fog" },
-  { inputs: ["fog", "fog"], output: "cloud" },
-  { inputs: ["air", "air"], output: "wind" },
-  { inputs: ["water", "water"], output: "sea" },
-  { inputs: ["cloud", "water"], output: "rain" },
-  { inputs: ["earth", "earth"], output: "land" },
-  { inputs: ["fire", "air"], output: "energy" },
-  { inputs: ["fire", "fire"], output: "heat" },
-  { inputs: ["fire", "water"], output: "smoke" },
-  { inputs: ["heat", "water"], output: "steam" },
-  { inputs: ["heat", "sea"], output: "steam" },
-  { inputs: ["land", "earth"], output: "mountain" },
-  { inputs: ["mountain", "fire"], output: "volcano" },
-  { inputs: ["land", "sea"], output: "planet" },
-  { inputs: ["planet", "fire"], output: "sun" },
-  { inputs: ["planet", "energy"], output: "sun" },
-  { inputs: ["wind", "sea"], output: "wave" },
-  { inputs: ["volt", "cloud"], output: "lightning" },
-  { inputs: ["volt", "rain"], output: "thunderstorm" },
-  { inputs: ["rain", "land"], output: "seedling" },
-  { inputs: ["rain", "earth"], output: "seedling" },
-  { inputs: ["seedling", "sun"], output: "plant" },
-  { inputs: ["plant", "sun"], output: "tree" },
-  { inputs: ["heat", "fire"], output: "plasma" },
-  { inputs: ["planet", "plasma"], output: "star" },
-  { inputs: ["star", "star"], output: "galaxy" },
-  { inputs: ["star", "planet"], output: "galaxy" },
-  { inputs: ["sea", "volcano"], output: "island" },
-  { inputs: ["air", "heat"], output: "pressure" },
-  { inputs: ["pressure", "earth"], output: "rock" },
-  { inputs: ["pressure", "rock"], output: "gem" },
-  { inputs: ["wind", "wind"], output: "cold" },
-  { inputs: ["cold", "water"], output: "ice" },
-  { inputs: ["cold", "cloud"], output: "snowing" },
-  { inputs: ["energy", "air"], output: "sound" },
-  { inputs: ["sound", "sound"], output: "music" },
-  { inputs: ["volcano", "water"], output: "rock" },
-  { inputs: ["rock", "planet"], output: "moon" },
-  { inputs: ["moon", "star"], output: "night" },
-  { inputs: ["rock", "galaxy"], output: "comet" },
-  { inputs: ["comet", "star"], output: "comet2" },
-  { inputs: ["fire", "rock"], output: "metal" },
-  { inputs: ["metal", "energy"], output: "volt" },
-];
+import recipes from "./recipes.json";
 
 export const getRecipe = (inputs) => {
   return recipes.find(
-    (recipe) => recipe.inputs.sort().toString() === inputs.sort().toString()
+    (recipe) =>
+      recipe.inputs.sort().toString() === [...new Set(inputs)].sort().toString()
   );
 };

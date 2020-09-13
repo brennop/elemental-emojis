@@ -1,6 +1,7 @@
 <script>
   import { source } from "../store/source";
-  import { getElement, getRecipe } from "../data/elements.js";
+  import { getElement } from "../data/elements.js";
+  import { getRecipe } from "../data/recipes.js";
   import { onMount } from "svelte/internal";
   import { progress } from "../store/progress";
   import { spring } from "svelte/motion";
@@ -20,10 +21,10 @@
   function handleDrop(event) {
     event.preventDefault();
 
-    const output = getRecipe(craftables, $source, value);
+    const recipe = getRecipe([$source, value]);
 
-    if (output) {
-      progress.update(($elements) => $elements.add(output.name));
+    if (recipe) {
+      progress.update(($elements) => $elements.add(recipe.output));
     }
   }
 </script>

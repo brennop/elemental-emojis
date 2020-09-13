@@ -1,0 +1,516 @@
+[
+  {
+    "name": "ufo",
+    "emoji": "🛸",
+    "displayName": "Flying Saucer"
+  },
+  {
+    "name": "ice",
+    "emoji": "🧊",
+    "displayName": "Ice"
+  },
+  {
+    "name": "magnet",
+    "emoji": "🧲",
+    "displayName": "Magnet"
+  },
+  {
+    "name": "glass",
+    "emoji": "🔍",
+    "displayName": "Glass"
+  },
+  {
+    "name": "cactus",
+    "emoji": "🌵",
+    "displayName": "Cactus"
+  },
+  {
+    "name": "city",
+    "emoji": "🌆",
+    "displayName": "City"
+  },
+  {
+    "name": "pressure",
+    "emoji": "⬇",
+    "displayName": "Pressure"
+  },
+  {
+    "name": "volt",
+    "emoji": "⚡",
+    "displayName": "Electricity"
+  },
+  {
+    "name": "palm",
+    "emoji": "🌴",
+    "displayName": "Palm"
+  },
+  {
+    "name": "fish",
+    "emoji": "🐟",
+    "displayName": "Fish"
+  },
+  {
+    "name": "Axe",
+    "emoji": "🪓",
+    "displayName": "Axe"
+  },
+  {
+    "name": "cylcone",
+    "emoji": "🌀",
+    "displayName": "Cyclone"
+  },
+  {
+    "name": "santa",
+    "emoji": "🎅",
+    "displayName": "Santa Claus"
+  },
+  {
+    "name": "water",
+    "emoji": "💦",
+    "displayName": "Water"
+  },
+  {
+    "name": "metal",
+    "emoji": "⛓",
+    "displayName": "Metal"
+  },
+  {
+    "name": "snowman",
+    "emoji": "⛄",
+    "displayName": "Snowman"
+  },
+  {
+    "name": "alarm",
+    "emoji": "⏰",
+    "displayName": "Alarm Clock"
+  },
+  {
+    "name": "time",
+    "emoji": "⏳",
+    "displayName": "Time"
+  },
+  {
+    "name": "sky",
+    "emoji": "⛅",
+    "displayName": "Sky"
+  },
+  {
+    "name": "cold",
+    "emoji": "❄",
+    "displayName": "Cold"
+  },
+  {
+    "name": "bricks",
+    "emoji": "🧱",
+    "displayName": "Bricks"
+  },
+  {
+    "name": "hot_spring",
+    "emoji": "♨",
+    "displayName": "Hot Spring"
+  },
+  {
+    "name": "wave",
+    "emoji": "〰",
+    "displayName": "Wave"
+  },
+  {
+    "name": "rainbow",
+    "emoji": "🌈",
+    "displayName": "Rainbow"
+  },
+  {
+    "name": "diamond",
+    "emoji": "💎",
+    "displayName": "Diamond"
+  },
+  {
+    "name": "air",
+    "emoji": "💨",
+    "displayName": "Air"
+  },
+  {
+    "name": "comet",
+    "emoji": "☄",
+    "displayName": "Comet"
+  },
+  {
+    "name": "tool",
+    "emoji": "🔧",
+    "displayName": "Tool"
+  },
+  {
+    "name": "rocket",
+    "emoji": "🚀",
+    "displayName": "Rocket"
+  },
+  {
+    "name": "plant",
+    "emoji": "🌿",
+    "displayName": "Plant"
+  },
+  {
+    "name": "night",
+    "emoji": "🌃",
+    "displayName": "Night"
+  },
+  {
+    "name": "lava",
+    "emoji": "🩸",
+    "displayName": "Lava"
+  },
+  {
+    "name": "fog",
+    "emoji": "🌫",
+    "displayName": "Fog"
+  },
+  {
+    "name": "thunderstorm",
+    "emoji": "⛈",
+    "displayName": "Thunderstom"
+  },
+  {
+    "name": "bacteria",
+    "emoji": "🦠",
+    "displayName": "Bacteria"
+  },
+  {
+    "name": "butterfly",
+    "emoji": "🦋",
+    "displayName": "Butterfly"
+  },
+  {
+    "name": "microphone",
+    "emoji": "🎤",
+    "displayName": "Microphone"
+  },
+  {
+    "name": "energy",
+    "emoji": "🔋",
+    "displayName": "Energy"
+  },
+  {
+    "name": "desert",
+    "emoji": "🏜",
+    "displayName": "Desert"
+  },
+  {
+    "name": "alien",
+    "emoji": "👽",
+    "displayName": "Alien"
+  },
+  {
+    "name": "life",
+    "emoji": "🧬",
+    "displayName": "Life"
+  },
+  {
+    "name": "space",
+    "emoji": "🌌",
+    "displayName": "Space"
+  },
+  {
+    "name": "robot",
+    "emoji": "🤖",
+    "displayName": "Robot"
+  },
+  {
+    "name": "mount_fuji",
+    "emoji": "🗻",
+    "displayName": "Mount Fuji"
+  },
+  {
+    "name": "moon",
+    "emoji": "🌑",
+    "displayName": "Moon"
+  },
+  {
+    "name": "plasma",
+    "emoji": "🔮",
+    "displayName": "Plasma"
+  },
+  {
+    "name": "house",
+    "emoji": "🏠",
+    "displayName": "House"
+  },
+  {
+    "name": "tree",
+    "emoji": "🌲",
+    "displayName": "Tree"
+  },
+  {
+    "name": "clock",
+    "emoji": "⌚",
+    "displayName": "Clock"
+  },
+  {
+    "name": "music",
+    "emoji": "🎵",
+    "displayName": "Music"
+  },
+  {
+    "name": "volcano",
+    "emoji": "🌋",
+    "displayName": "Volcano"
+  },
+  {
+    "name": "galaxy",
+    "emoji": "💫",
+    "displayName": "Galaxy"
+  },
+  {
+    "name": "zombie",
+    "emoji": "🧟",
+    "displayName": "Zombie"
+  },
+  {
+    "name": "mountain",
+    "emoji": "⛰",
+    "displayName": "Mountain"
+  },
+  {
+    "name": "island",
+    "emoji": "🏝",
+    "displayName": "Island"
+  },
+  {
+    "name": "cloud",
+    "emoji": "☁",
+    "displayName": "Cloud"
+  },
+  {
+    "name": "saturn",
+    "emoji": "🪐",
+    "displayName": "Ringed Planet"
+  },
+  {
+    "name": "black_hole",
+    "emoji": "🕳",
+    "displayName": "Black Hole"
+  },
+  {
+    "name": "sun",
+    "emoji": "☀",
+    "displayName": "Sun"
+  },
+  {
+    "name": "explosion",
+    "emoji": "💥",
+    "displayName": "Explosion"
+  },
+  {
+    "name": "fire",
+    "emoji": "🔥",
+    "displayName": "Fire"
+  },
+  {
+    "name": "seedling",
+    "emoji": "🌱",
+    "displayName": "Seedling"
+  },
+  {
+    "name": "rain",
+    "emoji": "🌧",
+    "displayName": "Rain"
+  },
+  {
+    "name": "day",
+    "emoji": "🏙",
+    "displayName": "Day"
+  },
+  {
+    "name": "light",
+    "emoji": "🔦",
+    "displayName": "Light"
+  },
+  {
+    "name": "earth",
+    "emoji": "🍪",
+    "displayName": "Earth"
+  },
+  {
+    "name": "bulb",
+    "emoji": "💡",
+    "displayName": "Light Bulb"
+  },
+  {
+    "name": "ring",
+    "emoji": "💍",
+    "displayName": "Ring"
+  },
+  {
+    "name": "shooting_star",
+    "emoji": "🌠",
+    "displayName": "Shooting Star"
+  },
+  {
+    "name": "snow",
+    "emoji": "🌨",
+    "displayName": "Snow"
+  },
+  {
+    "name": "ghost",
+    "emoji": "👻",
+    "displayName": "Ghost"
+  },
+  {
+    "name": "tornado",
+    "emoji": "🌪",
+    "displayName": "Tornado"
+  },
+  {
+    "name": "science",
+    "emoji": "🔬",
+    "displayName": "Science"
+  },
+  {
+    "name": "forest",
+    "emoji": "🏞",
+    "displayName": "Forest"
+  },
+  {
+    "name": "lightning",
+    "emoji": "🌩",
+    "displayName": "Lightning"
+  },
+  {
+    "name": "rock",
+    "emoji": "🗿",
+    "displayName": "Rock"
+  },
+  {
+    "name": "beach",
+    "emoji": "🏖",
+    "displayName": "Beach"
+  },
+  {
+    "name": "planet",
+    "emoji": "🌍",
+    "displayName": "Planet"
+  },
+  {
+    "name": "xmas_tree",
+    "emoji": "🎄",
+    "displayName": "Christmas Tree"
+  },
+  {
+    "name": "cooking",
+    "emoji": "🍳",
+    "displayName": "Cooking"
+  },
+  {
+    "name": "death",
+    "emoji": "☠",
+    "displayName": "Death"
+  },
+  {
+    "name": "smoke",
+    "emoji": "🚬",
+    "displayName": "Smoke"
+  },
+  {
+    "name": "devil",
+    "emoji": "😈",
+    "displayName": "Devil"
+  },
+  {
+    "name": "gunpowder",
+    "emoji": "🎆",
+    "displayName": "Gunpowder"
+  },
+  {
+    "name": "bird",
+    "emoji": "🐦",
+    "displayName": "Bird"
+  },
+  {
+    "name": "mud",
+    "emoji": "🔶",
+    "displayName": "Mud"
+  },
+  {
+    "name": "land",
+    "emoji": "🗾",
+    "displayName": "Land"
+  },
+  {
+    "name": "sound",
+    "emoji": "🔊",
+    "displayName": "Sound"
+  },
+  {
+    "name": "human",
+    "emoji": "🧑"
+  },
+  {
+    "name": "star",
+    "emoji": "⭐",
+    "displayName": "Star"
+  },
+  {
+    "name": "dust",
+    "emoji": "✨",
+    "displayName": "Dust"
+  },
+  {
+    "name": "information",
+    "emoji": "ℹ",
+    "displayName": "Information"
+  },
+  {
+    "name": "pickaxe",
+    "emoji": "⛏",
+    "displayName": "Pickaxe"
+  },
+  {
+    "name": "wind",
+    "emoji": "🌬",
+    "displayName": "Wind"
+  },
+  {
+    "name": "sand",
+    "emoji": "🧽",
+    "displayName": "Sand"
+  },
+  {
+    "name": "bomb",
+    "emoji": "💣",
+    "displayName": "Bomb"
+  },
+  {
+    "name": "bug",
+    "emoji": "🐛",
+    "displayName": "Bug"
+  },
+  {
+    "name": "sea",
+    "emoji": "🌊",
+    "displayName": "Sea"
+  },
+  {
+    "name": "salt",
+    "emoji": "🧂",
+    "displayName": "Salt"
+  },
+  {
+    "name": "monkey",
+    "emoji": "🐒",
+    "displayName": "Monkey"
+  },
+  {
+    "name": "telescope",
+    "emoji": "🔭",
+    "displayName": "Telescope"
+  },
+  {
+    "name": "heat",
+    "emoji": "🌡",
+    "displayName": "Heat"
+  },
+  {
+    "name": "egg",
+    "emoji": "🥚",
+    "displayName": "Egg"
+  }
+]
