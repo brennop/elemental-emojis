@@ -27,13 +27,14 @@
 
   .board {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 6em);
+    grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
     gap: 1em;
     align-content: start;
     border: 1px solid #888;
     border-radius: 1em;
     padding: 1em;
     flex: 1;
+    overflow-y: auto;
   }
 
   .float {
