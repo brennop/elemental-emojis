@@ -48,10 +48,24 @@
   },
   {
     "inputs": [
+      "fog",
+      "cold"
+    ],
+    "output": "cloud"
+  },
+  {
+    "inputs": [
       "life",
       "air"
     ],
     "output": "bird"
+  },
+  {
+    "inputs": [
+      "air",
+      "wave"
+    ],
+    "output": "sound"
   },
   {
     "inputs": [
@@ -97,6 +111,13 @@
   },
   {
     "inputs": [
+      "fog",
+      "pressure"
+    ],
+    "output": "cloud"
+  },
+  {
+    "inputs": [
       "water",
       "lava"
     ],
@@ -135,6 +156,13 @@
       "space"
     ],
     "output": "comet"
+  },
+  {
+    "inputs": [
+      "rain",
+      "sun"
+    ],
+    "output": "rainbow"
   },
   {
     "inputs": [
@@ -233,6 +261,13 @@
   },
   {
     "inputs": [
+      "tool",
+      "monkey"
+    ],
+    "output": "human"
+  },
+  {
+    "inputs": [
       "egg",
       "heat"
     ],
@@ -303,7 +338,7 @@
   {
     "inputs": [
       "tool",
-      "music"
+      "sound"
     ],
     "output": "microphone"
   },
@@ -363,6 +398,13 @@
   },
   {
     "inputs": [
+      "gunpowder",
+      "tool"
+    ],
+    "output": "gun"
+  },
+  {
+    "inputs": [
       "volt",
       "glass"
     ],
@@ -418,6 +460,13 @@
   },
   {
     "inputs": [
+      "sand",
+      "sea"
+    ],
+    "output": "beach"
+  },
+  {
+    "inputs": [
       "metal",
       "rock"
     ],
@@ -446,6 +495,13 @@
   },
   {
     "inputs": [
+      "mountain",
+      "snow"
+    ],
+    "output": "mount_fuji"
+  },
+  {
+    "inputs": [
       "fire",
       "planet"
     ],
@@ -468,14 +524,21 @@
   {
     "inputs": [
       "island",
-      "water"
+      "sea"
     ],
     "output": "beach"
   },
   {
     "inputs": [
+      "wind",
+      "thunderstorm"
+    ],
+    "output": "tornado"
+  },
+  {
+    "inputs": [
       "sand",
-      "energy"
+      "glass"
     ],
     "output": "time"
   },
@@ -484,7 +547,7 @@
       "sea",
       "tornado"
     ],
-    "output": "cylcone"
+    "output": "cyclone"
   },
   {
     "inputs": [
@@ -610,6 +673,13 @@
   },
   {
     "inputs": [
+      "mud",
+      "fire"
+    ],
+    "output": "human"
+  },
+  {
+    "inputs": [
       "tree",
       "island"
     ],
@@ -698,6 +768,13 @@
       "fire"
     ],
     "output": "smoke"
+  },
+  {
+    "inputs": [
+      "cold",
+      "rain"
+    ],
+    "output": "snow"
   },
   {
     "inputs": [
@@ -810,6 +887,13 @@
       "heat"
     ],
     "output": "pressure"
+  },
+  {
+    "inputs": [
+      "life",
+      "plasma"
+    ],
+    "output": "ghost"
   },
   {
     "inputs": [

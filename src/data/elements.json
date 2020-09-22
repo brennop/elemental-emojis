@@ -55,7 +55,7 @@
     "displayName": "Axe"
   },
   {
-    "name": "cylcone",
+    "name": "cyclone",
     "emoji": "🌀",
     "displayName": "Cyclone"
   },
@@ -167,7 +167,7 @@
   {
     "name": "thunderstorm",
     "emoji": "⛈",
-    "displayName": "Thunderstom"
+    "displayName": "Thunderstorm"
   },
   {
     "name": "bacteria",
@@ -273,6 +273,11 @@
     "name": "island",
     "emoji": "🏝",
     "displayName": "Island"
+  },
+  {
+    "name": "gun",
+    "emoji": "🔫",
+    "displayName": "Gun"
   },
   {
     "name": "cloud",
