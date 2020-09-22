@@ -1,27 +1,15 @@
 <script>
-  import { spring } from "svelte/motion";
-  import { scale } from "svelte/transition";
-  import { source } from "./store/source";
+  import { reset } from "./store/source";
   import { progress } from "./store/progress";
   import Element from "./components/Element.svelte";
-  import { elements, getElement } from "./data/elements";
-
-  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.4 });
-
-  function moveSource(event) {
-    const { x, y } = event;
-    coords.set({ x, y });
-  }
-
-  window.addEventListener("mousemove", moveSource);
+  import Float from "./components/Float.svelte";
+  import { elements } from "./data/elements";
 
   // reset source on cancel
-  document.addEventListener("click", () => source.set());
+  document.addEventListener("click", reset);
   document.addEventListener("keydown", ({ key }) => {
-    if (key === "Escape") source.set();
+    if (key === "Escape") reset();
   });
-
-  $: sourceElement = getElement($source);
 </script>
 
 <style>
@@ -43,42 +31,15 @@
     overflow-y: auto;
   }
 
-  .float {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .emoji {
-    font-size: 2em;
-    width: 48px;
-    height: 48px;
-    text-align: center;
-  }
-
   .progress {
     color: #ddd;
     font-size: 4em;
     padding: 0.4em 0.2em;
   }
-
-  span {
-    pointer-events: none;
-    z-index: 1;
-  }
 </style>
 
-<main on:dragover={moveSource}>
-  {#if $source}
-    <span
-      class="float"
-      style="transform: translate({$coords.x - 24}px,{$coords.y - 24}px)">
-      <span
-        transition:scale={{ duration: 280 }}
-        class="float emoji">{sourceElement.emoji}
-      </span>
-    </span>
-  {/if}
+<main>
+  <Float />
   <h1>⚛ Elemental Emojis</h1>
   <div class="board">
     {#each [...$progress] as element}

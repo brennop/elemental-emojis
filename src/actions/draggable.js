@@ -1,28 +1,28 @@
-import { source } from "../store/source";
+import { source, dragging } from "../store";
 
 export function draggable(node, value) {
-  node.draggable = true;
+  let x;
+  let y;
+  let timer;
 
-  node.addEventListener("dragstart", handleDragStart);
-  node.addEventListener("dragend", handleDragEnd);
+  const handleMouseDown = () => {
+    timer = setTimeout(() => {
+      source.set(value);
+      dragging.set(true);
+    }, 100);
+  };
 
-  function handleDragStart(event) {
-    source.set(value);
+  const handleMouseUp = () => {
+    clearTimeout(timer);
+  };
 
-    const img = new Image();
-    img.src =
-      "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
-    event.dataTransfer.setDragImage(img, 0, 0);
-  }
-
-  function handleDragEnd() {
-    source.set();
-  }
+  node.addEventListener("mousedown", handleMouseDown);
+  node.addEventListener("mouseup", handleMouseUp);
 
   return {
     destroy() {
-      node.removeEventListener("dragstart", handleDragStart);
-      node.removeEventListener("dragend", handleDragEnd);
+      node.removeEventListener(handleMouseDown);
+      node.removeEventListener(handleMouseUp);
     },
   };
 }

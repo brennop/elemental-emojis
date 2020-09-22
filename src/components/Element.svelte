@@ -1,17 +1,13 @@
 <script>
-  import { source } from "../store/source";
+  import { reset, source } from "../store/source";
   import { getElement } from "../data/elements.js";
   import { getRecipe } from "../data/recipes.js";
-  import { onMount } from "svelte/internal";
   import { progress } from "../store/progress";
-  import { spring } from "svelte/motion";
   import { draggable } from "../actions/draggable";
-  import { hoverable } from "../actions/hoverable";
   import { scale } from "svelte/transition";
 
   export let value;
-  let isHovered = false;
-  const { emoji, displayName, craftables } = getElement(value);
+  const { emoji, displayName } = getElement(value);
 
   function combineElements(source, target) {
     const recipe = getRecipe([source, target]);
@@ -32,7 +28,7 @@
       source.set(value);
     } else {
       combineElements($source, value);
-      source.set();
+      reset();
     }
   }
 </script>
@@ -44,13 +40,6 @@
     text-align: center;
     width: min-content;
     text-align: center;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   .container {
@@ -62,6 +51,13 @@
     flex-direction: column;
     transition: 0.2s ease-out;
     justify-content: space-between;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     box-shadow: inset 0 0 0px 0px #2fd3fc20;
   }
 
@@ -69,13 +65,10 @@
     box-shadow: inset 0 0 4px 4px #2fd3fc20;
   }
 
-  .hover {
-    background-color: #e2e8f0;
-  }
-
   span {
     font-size: 0.8rem;
     text-align: center;
+    pointer-events: none;
   }
 
   .selected {
@@ -90,11 +83,9 @@
 <div
   class:selected={$source === value}
   class="container"
-  class:hover={isHovered}
   use:draggable={value}
-  use:hoverable={(value) => (isHovered = value)}
-  on:drop={handleDrop}
-  on:click={handleClick}>
+  on:click={handleClick}
+  on:mouseup={handleDrop}>
   <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
   <span>{displayName}</span>
 </div>
