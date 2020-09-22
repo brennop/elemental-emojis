@@ -6,7 +6,7 @@
   import Element from "./components/Element.svelte";
   import { elements, getElement } from "./data/elements";
 
-  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.3 });
+  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.4 });
 
   function moveSource(event) {
     const { x, y } = event;

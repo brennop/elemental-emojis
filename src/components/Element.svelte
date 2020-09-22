@@ -7,16 +7,11 @@
   import { spring } from "svelte/motion";
   import { draggable } from "../actions/draggable";
   import { hoverable } from "../actions/hoverable";
+  import { scale } from "svelte/transition";
 
   export let value;
   let isHovered = false;
   const { emoji, displayName, craftables } = getElement(value);
-
-  const size = spring(0.2, { stiffness: 0.2, damping: 0.5 });
-
-  onMount(() => {
-    size.set(1);
-  });
 
   function combineElements(source, target) {
     const recipe = getRecipe([source, target]);
@@ -99,6 +94,6 @@
   use:hoverable={(value) => (isHovered = value)}
   on:drop={handleDrop}
   on:click={handleClick}>
-  <div class="item" style="transform: scale({$size})">{emoji}</div>
+  <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
   <span>{displayName}</span>
 </div>
