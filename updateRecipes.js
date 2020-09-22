@@ -12,7 +12,7 @@ const airtable = axios.create({
 const getElements = (offset) =>
   airtable
     .get(
-      `Elements?fields[]=name&fields[]=emoji&fields[]=displayName${
+      `Elements?fields[]=name&fields[]=emoji&fields[]=displayName&fields[]=hasCraftables${
         offset ? "&offset=" + offset : ""
       }`
     )

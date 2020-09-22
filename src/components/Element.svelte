@@ -7,7 +7,7 @@
   import { scale } from "svelte/transition";
 
   export let value;
-  const { emoji, displayName } = getElement(value);
+  const { emoji, displayName, hasCraftables } = getElement(value);
 
   function combineElements(source, target) {
     const recipe = getRecipe([source, target]);
@@ -17,13 +17,11 @@
     }
   }
 
-  function handleDrop(event) {
-    event.preventDefault();
+  function handleDrop() {
     combineElements($source, value);
   }
 
-  function handleClick(event) {
-    event.stopPropagation();
+  function handleClick() {
     if ($source == null) {
       source.set(value);
     } else {
@@ -78,14 +76,35 @@
   .selected:hover {
     box-shadow: inset 0 0 2px 6px #2fd3fc40;
   }
+
+  .container.disabled {
+    background: #a652f920;
+  }
+
+  .disabled:hover {
+    box-shadow: none;
+  }
+
+  .item.disabled {
+    cursor: default;
+  }
 </style>
 
-<div
-  class:selected={$source === value}
-  class="container"
-  use:draggable={value}
-  on:click={handleClick}
-  on:mouseup={handleDrop}>
-  <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
-  <span>{displayName}</span>
-</div>
+{#if hasCraftables}
+  <div
+    class="container"
+    class:selected={$source === value}
+    use:draggable={value}
+    on:click|stopPropagation={handleClick}
+    on:mouseup={handleDrop}>
+    <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
+    <span>{displayName}</span>
+  </div>
+{:else}
+  <div class="container disabled">
+    <div class="item disabled" transition:scale={{ duration: 280 }}>
+      {emoji}
+    </div>
+    <span>{displayName}</span>
+  </div>
+{/if}
