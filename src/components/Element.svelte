@@ -26,7 +26,8 @@
     combineElements($source, value);
   }
 
-  function handleClick() {
+  function handleClick(event) {
+    event.stopPropagation();
     if ($source == null) {
       source.set(value);
     } else {

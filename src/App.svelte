@@ -15,6 +15,12 @@
 
   window.addEventListener("mousemove", moveSource);
 
+  // reset source on cancel
+  document.addEventListener("click", () => source.set());
+  document.addEventListener("keydown", ({ key }) => {
+    if (key === "Escape") source.set();
+  });
+
   $: sourceElement = getElement($source);
 </script>
 
