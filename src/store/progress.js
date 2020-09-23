@@ -1,3 +1,15 @@
 import { writable } from "svelte/store";
 
-export const progress = writable(new Set(["water", "air", "fire", "earth"]));
+const initialProgress = JSON.parse(localStorage.getItem("progress")) || [
+  "water",
+  "air",
+  "fire",
+  "earth",
+];
+
+export const progress = writable(new Set(initialProgress));
+
+progress.subscribe((value) => {
+  const asArray = [...value];
+  localStorage.setItem("progress", JSON.stringify(asArray));
+});
