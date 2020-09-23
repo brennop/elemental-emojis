@@ -14,9 +14,9 @@ body {
   color: #333;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji",
-    -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, "Helvetica Neue", "Noto Color Emoji", "Apple Color Emoji",
+    "Segoe UI Emoji", sans-serif;
 }
 
 a {
