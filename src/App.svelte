@@ -1,6 +1,6 @@
 <script>
   import { reset } from "./store/source";
-  import { progress } from "./store/progress";
+  import { progress, dragging } from "./store";
   import Element from "./components/Element.svelte";
   import Float from "./components/Float.svelte";
   import { elements } from "./data/elements";
@@ -17,6 +17,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    margin: 1em;
   }
 
   .board {
@@ -36,9 +37,13 @@
     font-size: 4em;
     padding: 0.4em 0.2em;
   }
+
+  .dragging {
+    cursor: grabbing;
+  }
 </style>
 
-<main>
+<main class:dragging={$dragging}>
   <Float />
   <h1>⚛ Elemental Emojis</h1>
   <div class="board">

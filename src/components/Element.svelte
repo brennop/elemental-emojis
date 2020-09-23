@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    transition: 0.2s ease-out;
+    transition: 0.15s ease-out;
     justify-content: space-between;
 
     -webkit-touch-callout: none;
@@ -60,7 +60,7 @@
   }
 
   .container:hover {
-    box-shadow: inset 0 0 4px 4px #2fd3fc20;
+    background: #2fd3fc20;
   }
 
   span {
@@ -70,11 +70,11 @@
   }
 
   .selected {
-    box-shadow: inset 0 0 2px 6px #2fd3fc40;
+    box-shadow: inset 0 0 0px 6px #2fd3fc20;
   }
 
   .selected:hover {
-    box-shadow: inset 0 0 2px 6px #2fd3fc40;
+    box-shadow: inset 0 0 0px 8px #2fd3fc40;
   }
 
   .container.disabled {

@@ -4,7 +4,7 @@
   import { source, dragging } from "../store";
   import { getElement } from "../data/elements";
 
-  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.4 });
+  let coords = spring({ x: 0, y: 0 }, { stiffness: 0.3 });
 
   function moveSource(event) {
     const { x, y } = event;
