@@ -12,7 +12,7 @@ const airtable = axios.create({
 const getElements = (offset) =>
   airtable
     .get(
-      `Elements?fields[]=name&fields[]=emoji&fields[]=displayName&fields[]=hasCraftables${
+      `Elements?fields[]=name&fields[]=emoji&fields[]=displayName&fields[]=hasCraftables&fields[]=isCraftable${
         offset ? "&offset=" + offset : ""
       }`
     )
@@ -43,7 +43,9 @@ const getRecipes = (offset) =>
 
 (async () => {
   const elements = await getElements().then((elements) =>
-    elements.map((element) => element.fields)
+    elements
+      .map((element) => element.fields)
+      .filter((element) => element.isCraftable)
   );
 
   const recipes = await getRecipes().then((recipes) =>

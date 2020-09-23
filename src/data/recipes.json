@@ -14,15 +14,15 @@
   },
   {
     "inputs": [
-      "explosion",
-      "metal"
+      "metal",
+      "fire"
     ],
     "output": "rocket"
   },
   {
     "inputs": [
-      "science",
-      "space"
+      "space",
+      "science"
     ],
     "output": "rocket"
   },
@@ -32,6 +32,13 @@
       "tree"
     ],
     "output": "monkey"
+  },
+  {
+    "inputs": [
+      "day",
+      "night"
+    ],
+    "output": "time"
   },
   {
     "inputs": [
@@ -135,6 +142,13 @@
       "mud"
     ],
     "output": "bricks"
+  },
+  {
+    "inputs": [
+      "bat",
+      "human"
+    ],
+    "output": "vampire"
   },
   {
     "inputs": [
@@ -247,13 +261,6 @@
   },
   {
     "inputs": [
-      "information",
-      "human"
-    ],
-    "output": "science"
-  },
-  {
-    "inputs": [
       "bug",
       "wind"
     ],
@@ -310,6 +317,13 @@
   },
   {
     "inputs": [
+      "human",
+      "moon"
+    ],
+    "output": "wolf"
+  },
+  {
+    "inputs": [
       "earth"
     ],
     "output": "land"
@@ -351,6 +365,13 @@
   },
   {
     "inputs": [
+      "bird",
+      "night"
+    ],
+    "output": "bat"
+  },
+  {
+    "inputs": [
       "sky",
       "moon"
     ],
@@ -377,10 +398,10 @@
   },
   {
     "inputs": [
-      "information",
-      "monkey"
+      "metal",
+      "sky"
     ],
-    "output": "human"
+    "output": "plane"
   },
   {
     "inputs": [
@@ -481,10 +502,24 @@
   },
   {
     "inputs": [
+      "day",
+      "time"
+    ],
+    "output": "night"
+  },
+  {
+    "inputs": [
       "time",
       "life"
     ],
     "output": "death"
+  },
+  {
+    "inputs": [
+      "butterfly",
+      "wind"
+    ],
+    "output": "tornado"
   },
   {
     "inputs": [
@@ -578,6 +613,13 @@
   },
   {
     "inputs": [
+      "devil",
+      "sky"
+    ],
+    "output": "angel"
+  },
+  {
+    "inputs": [
       "tree",
       "desert"
     ],
@@ -598,6 +640,13 @@
   },
   {
     "inputs": [
+      "magnet",
+      "metal"
+    ],
+    "output": "compass"
+  },
+  {
+    "inputs": [
       "life",
       "death"
     ],
@@ -609,6 +658,13 @@
       "space"
     ],
     "output": "alien"
+  },
+  {
+    "inputs": [
+      "time",
+      "night"
+    ],
+    "output": "day"
   },
   {
     "inputs": [
@@ -673,8 +729,15 @@
   },
   {
     "inputs": [
+      "glass",
+      "space"
+    ],
+    "output": "telescope"
+  },
+  {
+    "inputs": [
       "mud",
-      "fire"
+      "heat"
     ],
     "output": "human"
   },
@@ -901,6 +964,13 @@
       "tool"
     ],
     "output": "ring"
+  },
+  {
+    "inputs": [
+      "desert",
+      "plant"
+    ],
+    "output": "cactus"
   },
   {
     "inputs": [

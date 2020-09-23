@@ -44,6 +44,7 @@
     border-radius: 0.8em;
     padding: 1em;
     height: 6em;
+    width: 6em;
     display: flex;
     align-items: center;
     flex-direction: column;
