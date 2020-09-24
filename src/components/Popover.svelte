@@ -5,7 +5,7 @@
   let popovers = [];
 
   export const pop = (value) => {
-    const data = getElement(value);
+    const data = { ...getElement(value), key: Math.random() + "" };
     popovers = [...popovers, data];
 
     setTimeout(() => {
@@ -21,6 +21,6 @@
   }
 </style>
 
-{#each popovers as { emoji }}
+{#each popovers as { emoji, key } (key)}
   <span out:fly={{ y: -40, duration: 700 }}> {emoji} </span>
 {/each}
