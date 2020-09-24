@@ -5,15 +5,19 @@
   import { progress } from "../store/progress";
   import { draggable } from "../actions/draggable";
   import { scale } from "svelte/transition";
+  import Popover from "./Popover.svelte";
 
   export let value;
   const { emoji, displayName, hasCraftables } = getElement(value);
+
+  let popover = false;
 
   function combineElements(source, target) {
     const recipe = getRecipe([source, target]);
 
     if (recipe) {
       progress.update(($elements) => $elements.add(recipe.output));
+      popover.pop(recipe.output);
     }
   }
 
@@ -50,6 +54,8 @@
     flex-direction: column;
     transition: 0.15s ease-out;
     justify-content: space-between;
+
+    position: relative;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -100,6 +106,7 @@
     on:mouseup={handleDrop}>
     <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
     <span>{displayName}</span>
+    <Popover bind:this={popover} />
   </div>
 {:else}
   <div class="container disabled">
