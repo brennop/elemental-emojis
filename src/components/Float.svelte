@@ -1,7 +1,7 @@
 <script>
   import { spring } from "svelte/motion";
   import { scale } from "svelte/transition";
-  import { source, dragging } from "../store";
+  import { source, dragging, mouse } from "../store";
   import { getElement } from "../data/elements";
 
   let coords = spring({ x: 0, y: 0 }, { stiffness: 0.3 });
@@ -9,6 +9,7 @@
   function moveSource(event) {
     const { x, y } = event;
     coords.set({ x, y });
+    mouse.set({ x, y });
   }
 
   window.addEventListener("mousemove", moveSource);
