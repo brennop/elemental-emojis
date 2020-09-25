@@ -1,6 +1,7 @@
 <script>
   import { progress } from "../store";
   import { elements } from "../data/elements";
+  import HiddenElement from "./HiddenElement.svelte";
 </script>
 
 <style>
@@ -12,4 +13,7 @@
   }
 </style>
 
-<span>{[...$progress].length}/{elements.length}</span>
+<span>
+  <HiddenElement value="numbers" />
+  {[...$progress].length}/{elements.length}
+</span>

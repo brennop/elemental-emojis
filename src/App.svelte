@@ -1,5 +1,5 @@
 <script>
-  import { reset } from "./store/source";
+  import { source, reset } from "./store/source";
   import { progress, dragging } from "./store";
   import Element from "./components/Element.svelte";
   import HiddenElement from "./components/HiddenElement.svelte";
@@ -11,6 +11,12 @@
   document.addEventListener("keydown", ({ key }) => {
     if (key === "Escape") reset();
   });
+
+  const handleDrop = () => {
+    if ($source && $dragging) {
+      progress.update(($elements) => $elements.add($source));
+    }
+  };
 </script>
 
 <style>
@@ -52,10 +58,12 @@
   <Float />
   <h1>
     <HiddenElement value="atom" />
-    ⚛ Elemental Emojis
+    ⚛
+    <HiddenElement value="letters" />
+    Elemental Emojis
   </h1>
 
-  <div class="board">
+  <div class="board" on:mouseup={handleDrop}>
     {#each [...$progress] as element}
       <Element value={element} />
     {/each}

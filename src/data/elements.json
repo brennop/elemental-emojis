@@ -280,6 +280,13 @@
     "isCraftable": 1
   },
   {
+    "hasCraftables": 0,
+    "isCraftable": 1,
+    "name": "numbers",
+    "emoji": "🔢",
+    "displayName": "Numbers"
+  },
+  {
     "name": "desert",
     "displayName": "Desert",
     "emoji": "🏜",
@@ -418,6 +425,13 @@
     "emoji": "🔫",
     "hasCraftables": 0,
     "isCraftable": 1
+  },
+  {
+    "hasCraftables": 0,
+    "isCraftable": 1,
+    "name": "letters",
+    "emoji": "🔤",
+    "displayName": "Letters"
   },
   {
     "name": "cloud",

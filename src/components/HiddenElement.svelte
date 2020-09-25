@@ -8,19 +8,12 @@
   export let value;
   const { emoji } = getElement(value);
 
-  let popover = false;
-
   function combineElements(source, target) {
     const recipe = getRecipe([source, target]);
 
     if (recipe) {
       progress.update(($elements) => $elements.add(recipe.output));
-      popover.pop(recipe.output);
     }
-  }
-
-  function handleDrop() {
-    combineElements($source, value);
   }
 
   function handleClick() {
