@@ -56,13 +56,6 @@
     justify-content: space-between;
 
     position: relative;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     box-shadow: inset 0 0 0px 0px #2fd3fc20;
   }
 

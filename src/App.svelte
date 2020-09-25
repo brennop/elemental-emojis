@@ -2,8 +2,9 @@
   import { reset } from "./store/source";
   import { progress, dragging } from "./store";
   import Element from "./components/Element.svelte";
+  import HiddenElement from "./components/HiddenElement.svelte";
   import Float from "./components/Float.svelte";
-  import { elements } from "./data/elements";
+  import Progress from "./components/Progress.svelte";
 
   // reset source on cancel
   document.addEventListener("click", reset);
@@ -17,7 +18,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 1em;
+    padding: 1em;
   }
 
   .board {
@@ -32,24 +33,44 @@
     overflow-y: auto;
   }
 
-  .progress {
-    color: #ddd;
-    font-size: 4em;
-    padding: 0.4em 0.2em;
-  }
-
   .dragging {
     cursor: grabbing;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  ul {
+    list-style: none;
   }
 </style>
 
 <main class:dragging={$dragging}>
   <Float />
-  <h1>⚛ Elemental Emojis</h1>
+  <h1>
+    <HiddenElement value="atom" />
+    ⚛ Elemental Emojis
+  </h1>
+
   <div class="board">
     {#each [...$progress] as element}
       <Element value={element} />
     {/each}
   </div>
-  <div class="progress">{[...$progress].length}/{elements.length}</div>
+  <div class="bottom">
+    <Progress />
+    <ul>
+      <li>
+        <HiddenElement value="bug" />
+        <a
+          href="https://forms.gle/NwJzRQMj5y5FyueQA"
+          target="_blank"
+          rel="noopener noreferer">
+          🐛 Report a bug.</a>
+      </li>
+    </ul>
+  </div>
 </main>
