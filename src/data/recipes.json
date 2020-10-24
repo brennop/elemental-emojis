@@ -1004,5 +1004,26 @@
       "earth"
     ],
     "output": "lava"
+  },
+  {
+    "inputs": [
+      "snow",
+      "human"
+    ],
+    "output": "ice skater"
+  },
+  {
+    "inputs": [
+      "metal",
+      "heat"
+    ],
+    "output": "sword"
+  },
+  {
+    "inputs": [
+      "sword",
+      "human"
+    ],
+    "output": "fencer"
   }
 ]
