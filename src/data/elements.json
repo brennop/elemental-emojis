@@ -775,5 +775,26 @@
     "emoji": "🥚",
     "hasCraftables": 1,
     "isCraftable": 1
+  },
+  {
+    "name": "ice skater",
+    "displayName": "Ice Skater",
+    "emoji": "⛷",
+    "hasCraftables": 0,
+    "isCraftable": 1
+  },
+  {
+    "name": "sword",
+    "displayName": "Sword",
+    "emoji": "⚔",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+  {
+    "name": "fencer",
+    "displayName": "Fencer",
+    "emoji": "🤺",
+    "hasCraftables": 0,
+    "isCraftable": 1
   }
 ]
