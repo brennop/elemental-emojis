@@ -300,6 +300,15 @@
     ],
     "output": "human"
   },
+
+  {
+    "inputs": [
+      "snow",
+      "human"
+    ],
+    "output": "humanOnSnow"
+  },
+
   {
     "inputs": [
       "egg",
@@ -1038,6 +1047,13 @@
       "human"
     ],
     "output": "ice skater"
+  },
+
+  {
+    "inputs": [
+      "snow"
+    ],
+    "output": "snowFlake"
   },
   {
     "inputs": [

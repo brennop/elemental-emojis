@@ -557,6 +557,15 @@
     "hasCraftables": 0,
     "isCraftable": 1
   },
+  
+
+  {
+    "name": "humanOnSnow",
+    "displayName": "Snow Boarding",
+    "emoji": "🏂",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
   {
     "name": "snow",
     "displayName": "Snow",
@@ -564,6 +573,15 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "snowFlake",
+    "displayName": "Snow Flake",
+    "emoji": "❄",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
   {
     "name": "ghost",
     "displayName": "Ghost",
