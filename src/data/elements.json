@@ -431,6 +431,15 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "snow_mountain",
+    "displayName": "Snow Mountain",
+    "emoji": "🏔",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+  
   {
     "hasCraftables": 0,
     "isCraftable": 1,

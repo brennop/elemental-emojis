@@ -567,7 +567,7 @@
   {
     "inputs": [
       "mountain",
-      "snow"
+      "cold"
     ],
     "output": "mount_fuji"
   },
@@ -585,12 +585,14 @@
     ],
     "output": "sand"
   },
+  
+
   {
     "inputs": [
       "mountain",
-      "cold"
+      "snow"
     ],
-    "output": "mount_fuji"
+    "output": "snow_mountain"
   },
   {
     "inputs": [
