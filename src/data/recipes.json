@@ -23,13 +23,7 @@
     "output": "racingCar" 
   },
 
-  {
-    "inputs": [
-      "glass",
-      "metal"
-    ],
-    "output": "car"
-  },
+ 
 
   {
     "inputs": [
