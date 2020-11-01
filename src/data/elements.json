@@ -27,6 +27,32 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "firetruck",
+    "displayName": "firetruck",
+    "emoji": "🚒",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
+
+  {
+    "name": "car",
+    "displayName": "Car",
+    "emoji": "🚓",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
+  {
+    "name": "racingCar",
+    "displayName": "Racing Car",
+    "emoji": "🏎",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
   {
     "name": "cactus",
     "displayName": "Cactus",
@@ -405,6 +431,15 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "snow_mountain",
+    "displayName": "Snow Mountain",
+    "emoji": "🏔",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+  
   {
     "hasCraftables": 0,
     "isCraftable": 1,
@@ -482,7 +517,7 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
-  {
+  { 
     "name": "rain",
     "displayName": "Rain",
     "emoji": "🌧",
@@ -531,6 +566,15 @@
     "hasCraftables": 0,
     "isCraftable": 1
   },
+  
+
+  {
+    "name": "humanOnSnow",
+    "displayName": "Snow Boarding",
+    "emoji": "🏂",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
   {
     "name": "snow",
     "displayName": "Snow",
@@ -538,6 +582,15 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "snowFlake",
+    "displayName": "Snow Flake",
+    "emoji": "❄",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
   {
     "name": "ghost",
     "displayName": "Ghost",

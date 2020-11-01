@@ -6,6 +6,33 @@
     ],
     "output": "robot"
   },
+
+  {
+    "inputs": [
+      "glass",
+      "metal"
+    ],
+    "output": "car" 
+  },
+
+  {
+    "inputs": [
+      "car",
+      "energy"
+    ],
+    "output": "racingCar" 
+  },
+
+ 
+
+  {
+    "inputs": [
+      "fire",
+      "car"
+    ],
+    "output": "firetruck"
+  },
+
   {
     "inputs": [
       "house"
@@ -273,6 +300,15 @@
     ],
     "output": "human"
   },
+
+  {
+    "inputs": [
+      "snow",
+      "human"
+    ],
+    "output": "humanOnSnow"
+  },
+
   {
     "inputs": [
       "egg",
@@ -531,7 +567,7 @@
   {
     "inputs": [
       "mountain",
-      "snow"
+      "cold"
     ],
     "output": "mount_fuji"
   },
@@ -549,12 +585,14 @@
     ],
     "output": "sand"
   },
+  
+
   {
     "inputs": [
       "mountain",
-      "cold"
+      "snow"
     ],
-    "output": "mount_fuji"
+    "output": "snow_mountain"
   },
   {
     "inputs": [
@@ -1011,6 +1049,13 @@
       "human"
     ],
     "output": "ice skater"
+  },
+
+  {
+    "inputs": [
+      "snow"
+    ],
+    "output": "snowFlake"
   },
   {
     "inputs": [
