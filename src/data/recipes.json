@@ -6,6 +6,39 @@
     ],
     "output": "robot"
   },
+
+  {
+    "inputs": [
+      "glass",
+      "metal"
+    ],
+    "output": "car" 
+  },
+
+  {
+    "inputs": [
+      "car",
+      "energy"
+    ],
+    "output": "racingCar" 
+  },
+
+  {
+    "inputs": [
+      "glass",
+      "metal"
+    ],
+    "output": "car"
+  },
+
+  {
+    "inputs": [
+      "fire",
+      "car"
+    ],
+    "output": "firetruck"
+  },
+
   {
     "inputs": [
       "house"

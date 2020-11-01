@@ -27,6 +27,32 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
+
+  {
+    "name": "firetruck",
+    "displayName": "firetruck",
+    "emoji": "🚒",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
+
+  {
+    "name": "car",
+    "displayName": "Car",
+    "emoji": "🚓",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
+  {
+    "name": "racingCar",
+    "displayName": "Racing Car",
+    "emoji": "🏎",
+    "hasCraftables": 1,
+    "isCraftable": 1
+  },
+
   {
     "name": "cactus",
     "displayName": "Cactus",
@@ -482,7 +508,7 @@
     "hasCraftables": 1,
     "isCraftable": 1
   },
-  {
+  { 
     "name": "rain",
     "displayName": "Rain",
     "emoji": "🌧",
