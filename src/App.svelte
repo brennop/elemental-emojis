@@ -19,12 +19,47 @@
   };
 </script>
 
+<main class:dragging={$dragging}>
+  <Float />
+  <h1>
+    <HiddenElement value="atom" />
+    ⚛
+    <HiddenElement value="letters" />
+    <a href="https://elemental-emojis.vercel.app/">Elemental Emojis</a>
+  </h1>
+
+  <div class="board" on:mouseup={handleDrop}>
+    {#each [...$progress] as element}
+      <Element value={element} />
+    {/each}
+  </div>
+  <div class="bottom">
+    <Progress />
+    <ul>
+      <li>
+        <HiddenElement value="bug" />
+        <a
+          href="https://forms.gle/NwJzRQMj5y5FyueQA"
+          target="_blank"
+          rel="noopener noreferer"
+        >
+          🐛 Report a bug.</a
+        >
+      </li>
+    </ul>
+  </div>
+</main>
+
 <style>
   main {
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 1em;
+  }
+
+  main a {
+    text-decoration: none;
   }
 
   .board {
@@ -53,32 +88,3 @@
     list-style: none;
   }
 </style>
-
-<main class:dragging={$dragging}>
-  <Float />
-  <h1>
-    <HiddenElement value="atom" />
-    ⚛
-    <HiddenElement value="letters" />
-    Elemental Emojis
-  </h1>
-
-  <div class="board" on:mouseup={handleDrop}>
-    {#each [...$progress] as element}
-      <Element value={element} />
-    {/each}
-  </div>
-  <div class="bottom">
-    <Progress />
-    <ul>
-      <li>
-        <HiddenElement value="bug" />
-        <a
-          href="https://forms.gle/NwJzRQMj5y5FyueQA"
-          target="_blank"
-          rel="noopener noreferer">
-          🐛 Report a bug.</a>
-      </li>
-    </ul>
-  </div>
-</main>
