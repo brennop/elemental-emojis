@@ -35,6 +35,27 @@
   }
 </script>
 
+{#if hasCraftables}
+  <div
+    class="container"
+    class:selected={$source === value}
+    use:draggable={value}
+    on:click|stopPropagation={handleClick}
+    on:mouseup={handleDrop}
+  >
+    <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
+    <span>{displayName}</span>
+    <Popover bind:this={popover} />
+  </div>
+{:else}
+  <div class="container disabled">
+    <div class="item disabled" transition:scale={{ duration: 280 }}>
+      {emoji}
+    </div>
+    <span>{displayName}</span>
+  </div>
+{/if}
+
 <style>
   .item {
     font-size: 2em;
@@ -89,23 +110,3 @@
     cursor: default;
   }
 </style>
-
-{#if hasCraftables}
-  <div
-    class="container"
-    class:selected={$source === value}
-    use:draggable={value}
-    on:click|stopPropagation={handleClick}
-    on:mouseup={handleDrop}>
-    <div class="item" transition:scale={{ duration: 280 }}>{emoji}</div>
-    <span>{displayName}</span>
-    <Popover bind:this={popover} />
-  </div>
-{:else}
-  <div class="container disabled">
-    <div class="item disabled" transition:scale={{ duration: 280 }}>
-      {emoji}
-    </div>
-    <span>{displayName}</span>
-  </div>
-{/if}

@@ -1,6 +1,8 @@
 <script>
   import { source, reset } from "./store/source";
   import { progress, dragging } from "./store";
+  import { getElement } from "./data/elements";
+
   import Element from "./components/Element.svelte";
   import HiddenElement from "./components/HiddenElement.svelte";
   import Float from "./components/Float.svelte";
@@ -17,16 +19,27 @@
       progress.update(($elements) => $elements.add($source));
     }
   };
+
+  $: sourceElement = getElement($source);
 </script>
 
 <main class:dragging={$dragging}>
   <Float />
-  <h1>
-    <HiddenElement value="atom" />
-    ⚛
-    <HiddenElement value="letters" />
-    <a href="https://elemental-emojis.vercel.app/">Elemental Emojis</a>
-  </h1>
+  <header>
+    <h1>
+      <HiddenElement value="atom" />
+      ⚛
+      <HiddenElement value="letters" />
+      <a href="https://elemental-emojis.vercel.app/">Elemental Emojis</a>
+    </h1>
+
+    {#if $source}
+      <span class="selected">
+        <span class="emoji">{sourceElement.emoji} </span>
+        <span>{sourceElement.displayName}</span>
+      </span>
+    {/if}
+  </header>
 
   <div class="board" on:mouseup={handleDrop}>
     {#each [...$progress] as element}
@@ -62,6 +75,34 @@
     text-decoration: none;
   }
 
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em 0;
+  }
+
+  .selected {
+    background: #2fd3fc20;
+    padding: 1em;
+    border-radius: 0.5em;
+    height: 5em;
+    width: 5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .selected span {
+    font-size: 0.8em;
+  }
+
+  .selected .emoji {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
   .board {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
@@ -69,7 +110,7 @@
     align-content: start;
     border: 1px solid #888;
     border-radius: 1em;
-    padding: 1em;
+    padding: 0.5em;
     flex: 1;
     overflow-y: auto;
   }
