@@ -7,6 +7,7 @@
   import HiddenElement from "./components/HiddenElement.svelte";
   import Float from "./components/Float.svelte";
   import Progress from "./components/Progress.svelte";
+  import Hint from "./components/Hint.svelte";
 
   // reset source on cancel
   document.addEventListener("click", reset);
@@ -59,6 +60,7 @@
           🐛 Report a bug.</a
         >
       </li>
+      <Hint />
     </ul>
   </div>
 </main>
@@ -95,7 +97,8 @@
   }
 
   .selected span {
-    font-size: 0.8em;
+    font-size: 0.75em;
+    text-align: center;
   }
 
   .selected .emoji {
@@ -108,8 +111,8 @@
     grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
     gap: 1em;
     align-content: start;
-    border: 1px solid #888;
-    border-radius: 1em;
+    border: 1px solid #ddd;
+    border-radius: 0.5em;
     padding: 0.5em;
     flex: 1;
     overflow-y: auto;
@@ -127,5 +130,11 @@
 
   ul {
     list-style: none;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
   }
 </style>

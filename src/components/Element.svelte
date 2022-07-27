@@ -73,7 +73,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    transition: 0.15s ease-out;
+    transition: 0.07s ease-out;
     justify-content: space-between;
 
     position: relative;
@@ -99,7 +99,7 @@
   }
 
   .container.disabled {
-    background: #a652f920;
+    background: #b99fd220;
   }
 
   .disabled:hover {

@@ -17,6 +17,17 @@
   $: sourceElement = getElement($source);
 </script>
 
+{#if $source && $dragging}
+  <span
+    class="float"
+    style="transform: translate({$coords.x - 24}px,{$coords.y - 24}px)"
+  >
+    <span transition:scale={{ duration: 200 }} class="float emoji"
+      >{sourceElement.emoji}
+    </span>
+  </span>
+{/if}
+
 <style>
   .float {
     position: absolute;
@@ -36,14 +47,3 @@
     z-index: 1;
   }
 </style>
-
-{#if $source && $dragging}
-  <span
-    class="float"
-    style="transform: translate({$coords.x - 24}px,{$coords.y - 24}px)">
-    <span
-      transition:scale={{ duration: 200 }}
-      class="float emoji">{sourceElement.emoji}
-    </span>
-  </span>
-{/if}
