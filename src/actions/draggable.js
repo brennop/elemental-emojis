@@ -26,7 +26,7 @@ export function draggable(node, value) {
     x = event.clientX;
     y = event.clientY;
 
-    timers = [setTimeout(handleDrag, 100), setTimeout(handleLongPress, 500)];
+    timers = [setTimeout(handleDrag, 50), setTimeout(handleLongPress, 100)];
   };
 
   const handleMouseUp = () => {

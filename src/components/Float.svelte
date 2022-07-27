@@ -42,7 +42,7 @@
     class="float"
     style="transform: translate({$coords.x - 24}px,{$coords.y - 24}px)">
     <span
-      transition:scale={{ duration: 280 }}
+      transition:scale={{ duration: 200 }}
       class="float emoji">{sourceElement.emoji}
     </span>
   </span>
